@@ -1,0 +1,194 @@
+/* =====================================
+   Notion-Style CSS for Pandoc PDF
+   ===================================== */
+
+@page {
+  size: A4;
+  margin: 2.5cm 3cm;
+}
+
+body {
+  font-family: "Inter", "SF Pro Text", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 11pt;
+  line-height: 1.6;
+  color: #1d1d1f;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* --- Logo centered at top --- */
+img.logo {
+  display: block;
+  margin: 0 auto 1.2cm auto;
+  width: 120px;
+  border: none;
+}
+
+/* --- First page title --- */
+h1:first-of-type {
+  font-size: 20pt;
+  font-weight: 700;
+  color: #0B3D91;
+  margin-top: 0;
+  margin-bottom: 4pt;
+}
+
+/* --- Section headings --- */
+h1:not(:first-of-type) {
+  font-size: 16pt;
+  font-weight: 700;
+  color: #0B3D91;
+  margin-top: 28pt;
+  margin-bottom: 10pt;
+  page-break-after: avoid;
+}
+
+h2 {
+  font-size: 13pt;
+  font-weight: 600;
+  color: #0B3D91;
+  margin-top: 22pt;
+  margin-bottom: 8pt;
+  page-break-after: avoid;
+}
+
+h3 {
+  font-size: 11.5pt;
+  font-weight: 600;
+  color: #333;
+  margin-top: 18pt;
+  margin-bottom: 6pt;
+}
+
+/* --- Body text --- */
+p {
+  margin: 6pt 0;
+}
+
+/* --- Lists --- */
+ol, ul {
+  padding-left: 22pt;
+  margin: 6pt 0;
+}
+
+li {
+  margin-bottom: 4pt;
+}
+
+/* --- Inline code --- */
+code {
+  font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+  font-size: 9.5pt;
+  background: #f0f0f0;
+  padding: 1pt 5pt;
+  border-radius: 3pt;
+}
+
+/* --- Code blocks --- */
+pre {
+  background: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-left: 4px solid #0B3D91;
+  border-radius: 4pt;
+  padding: 10pt 12pt;
+  font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+  font-size: 9pt;
+  line-height: 1.5;
+  margin: 10pt 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* --- Tables --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+  margin: 10pt 0;
+  page-break-inside: avoid;
+  table-layout: fixed;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+table th {
+  background: #f5f5f5;
+  font-weight: 600;
+  text-align: left;
+  padding: 5pt 6pt;
+  border: 1px solid #e0e0e0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+table td {
+  padding: 4pt 6pt;
+  border: 1px solid #e0e0e0;
+  vertical-align: top;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+table tr:nth-child(even) td {
+  background: #fafafa;
+}
+
+/* --- Blockquotes --- */
+blockquote {
+  background: #f5f5f5;
+  border-left: 4px solid #0B3D91;
+  border-radius: 3pt;
+  margin: 10pt 0;
+  padding: 8pt 12pt;
+  font-size: 10pt;
+  color: #333;
+}
+
+blockquote strong {
+  color: #0B3D91;
+}
+
+/* --- Body images --- */
+img:not(.logo) {
+  max-width: 100%;
+  height: auto;
+  margin: 12pt 0;
+  border: 1px solid #eee;
+  border-radius: 4pt;
+}
+
+/* --- Horizontal rules --- */
+hr {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 18pt 0;
+}
+
+/* --- Print optimization --- */
+@media print {
+  body {
+    max-width: none;
+    font-size: 10.5pt;
+  }
+  pre {
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  table {
+    font-size: 8.5pt;
+    table-layout: fixed;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  table th, table td {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}

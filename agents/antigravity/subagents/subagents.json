@@ -1,0 +1,22 @@
+{
+  "subagents": [
+    {
+      "name": "self",
+      "description": "Subagent that inherits the parent agent's full configuration including tools, system prompt, and model. Use when you need to run a task in a separate conversation context but with the same capabilities as the current agent.",
+      "tools": "inherit",
+      "model": "inherit"
+    },
+    {
+      "name": "research",
+      "description": "Research subagent with read-only tools for exploring the codebase, searching the web, and reading files. Delegate to this agent when you need to run a task in a separate conversation context, when a research task requires many search and file-reading steps that would clutter context, or when you need a broad survey of the codebase or documentation.",
+      "tools": ["view_file", "search_web", "read_url_content"],
+      "model": "flash"
+    },
+    {
+      "name": "image-generator",
+      "description": "Generates or edits images from a brief and replies with the saved file paths.",
+      "tools": ["image_generation"],
+      "model": "inherit"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[
+  {"name": "portainer",     "url": "https://172.17.0.1:9443/api/status", "kind": "https", "note": "Portainer UI/API (unauth status)"},
+  {"name": "open-webui",    "url": "http://172.17.0.1:8085/",            "kind": "http",  "note": "Open WebUI chat"},
+  {"name": "open-terminal", "url": "http://172.17.0.1:8086/",            "kind": "http",  "note": "Open Terminal (404 root is normal)"},
+  {"name": "librenms",      "url": "http://172.17.0.1:8181/",            "kind": "http",  "note": "LibreNMS NMS UI (302 = normal)"},
+  {"name": "zabbix-web",    "url": "http://172.17.0.1:8083/",            "kind": "http",  "note": "Zabbix web UI (nginx)"},
+  {"name": "zabbix-server", "url": "tcp://172.17.0.1:10051",             "kind": "tcp",   "note": "Zabbix server trapper"},
+  {"name": "zammad",        "url": "http://172.17.0.1:8084/",            "kind": "http",  "note": "Zammad helpdesk UI"},
+  {"name": "vaultwarden",   "url": "http://172.17.0.1:8080/",            "kind": "http",  "note": "Vaultwarden (was conn-refused; record as baseline)"}
+]
